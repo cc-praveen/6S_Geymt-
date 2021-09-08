@@ -1,5 +1,5 @@
 name: geymt
-description: Gate Access for Geymt
+description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 1.0.1+1
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -28,6 +28,54 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_svg: ^0.22.0 # help us to use SVG in our app
+  persistent_bottom_nav_bar: ^4.0.2 # keep the bottom navigation bar visible in detail pages
+  #flutter_sliding_up_panel: ^1.2.1
+  flutter_bloc: ^7.0.0
+  http: ^0.13.2
+  shared_preferences: ^2.0.5
+  #google_fonts: ^2.1.0
+  sms_autofill: ^2.0.0
+  shimmer: ^2.0.0
+
+  url_launcher: ^6.0.9
+  #flutter_compass: ^0.6.1
+  #flutter_vibrate: ^1.1.0
+  google_maps_flutter: ^2.0.6
+  #location: ^4.3.0
+  sliding_up_panel: ^2.0.0+1
+  device_preview: ^0.7.4
+  flutter_screenutil: ^5.0.0+2 # building a responsive design
+  connectivity_plus: ^1.0.6
+  geolocator: ^7.4.0
+  battery: ^2.0.3
+  path_provider: ^2.0.2
+  bottom_sheet: ^1.0.1
+  package_info: ^2.0.2
+  cached_network_image: ^3.1.0
+  #firebase_crashlytics: ^2.2.1
+  #firebase_core: ^1.6.0
+  #flutter_statusbar_manager: ^2.0.0
+
+  #--------------
+  #google_maps_flutter: ^2.0.6
+  #location: ^4.3.0
+  #geocoder: ^0.2.1
+  #great_circle_distance2: ^1.0.1+1
+  #equatable: ^0.2.6
+  #google_maps_utils: ^1.4.0+1
+  #geodesy: ^0.3.2
+  #flutter_polyline_points: ^1.0.0
+  #flutter_compass: ^0.6.1
+  #permission_handler: ^8.1.2
+  #geocoding: ^2.0.0
+  #geofence_service: ^3.1.1
+  #geocoder: ^0.2.1
+  #google_maps_flutter: ^2.0.6
+  #
+  #provider: 5.0.0
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -37,13 +85,26 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/icon.png"
+  adaptive_icon_foreground: "assets/icons/icon_fg.png"
+  adaptive_icon_background: "#0D0D0D"
+
+
 flutter:
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/countrycodes.json
+    - assets/languages/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -60,11 +121,19 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
+          weight: 600
+        - asset: assets/fonts/Roboto/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+          weight: 400
+    - family: Haettenschweiler
+      fonts:
+        - asset: assets/fonts/Haettenschweiler/haetten.ttf
+
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
